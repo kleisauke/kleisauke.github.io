@@ -1,0 +1,34 @@
+---
+layout: page
+title: Portfolio
+id: portfolio
+root: ../
+permalink: en/portfolio
+lang: en
+---
+<h2 class="caption m-b-2"><span>{{ page.title }}</span></h2>
+<ul id="filters" class="list-inline text-xs-right">
+{% for filter in site.portfolio.filters %}
+  <li class="list-inline-item{% if filter.current == true %} current{% endif %}"><a href="#" data-filter="{{ filter.data-filter }}">{% if filter.name[page.lang] %}{{ filter.name[page.lang] }}{% else %}{{ filter.name }}{% endif %}</a></li>
+{% endfor %}
+</ul>
+<div id="portfolio-items" class="row">
+{% for item in site.portfolio.items %}
+  {% assign portfolio=site.portfolio_collection | where:"lang", page.lang | where:"portfolio-id", item.id | first %}
+  <div class="item {{ portfolio.type }} col-xs-12 col-sm-6 col-lg-4">
+    <div class="card">
+        <div class="card-box">
+            <img class="card-img-top w-100" src="{{ portfolio.image-small | prepend: page.root }}" alt="{{ portfolio.title }}">
+            <div class="card-img-overlay">
+                <h4 class="card-title text-uppercase">{{ portfolio.see-details }}</h4>
+                <a href="{{ portfolio.src }}" data-rel="lightcase:portfolio" data-lc-href="{{ portfolio.ajax-src }}" class="ajax-popup"></a>
+            </div>
+        </div>
+        <div class="card-block">
+          <h3 class="card-title text-xs-center m-b-0">{{ portfolio.title }}</h3>
+          <p class="card-text text-xs-center text-muted">{{ portfolio.category }}</p>
+        </div>
+    </div>
+  </div>
+{% endfor %}
+</div>

@@ -1,0 +1,32 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+{% include head.html %}
+<body>
+<div class="portfolio-single container">
+    <div class="row p-y-1">
+        {% assign portfolio=site.portfolio_collection | where:"lang", page.lang | where:"portfolio-id", page.id | first %}
+        <div id="lightcase-nav">
+          <a href="{% if page.lang == site.main-language %}/#portfolio{% else %}{{ '/#portfolio' | prepend: page.lang | prepend: '/' }}{% endif %}" style="color: #000; opacity: 1;" class="lightcase-icon-close"><span>Close</span></a>
+          {% if page.prev_url %}
+              <a href="{{ page.prev_url }}" style="color: #000;" class="lightcase-icon-prev"><span>Prev</span></a>
+          {% endif %}
+          {% if page.next_url %}
+              <a href="{{ page.next_url }}" style="color: #000;" class="lightcase-icon-next"><span>Next</span></a>
+          {% endif %}
+        </div>
+
+        <div class="col-md-7">
+            <img class="img-fluid" src="{{ portfolio.image-big | prepend: page.root }}" alt="{{ portfolio.title }}">
+        </div>
+
+        <div class="col-md-5">
+            <h2 class="caption m-b-2"><span>{{ portfolio.title }}</span></h2>
+             {{ portfolio.content }}
+        </div>
+    </div>
+</div>
+</body>
+</html>

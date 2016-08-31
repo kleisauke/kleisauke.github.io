@@ -1,0 +1,23 @@
+<div class="btn-group dropup" id="language-chooser" role="group">
+  <button id="btn-language-chooser" title="{{ site.footer.language-chooser[page.lang] }}" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-globe fa-lg"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="btn-language-chooser">
+    {% for language in site.footer.languages %}
+      <a class="dropdown-item{% if page.lang == language.short %} active{% endif %}" href="{% if page.lang == language.short %}#{% elsif language.short == site.main-language %}{{ page.root }}{% else %}{{ language.short | prepend: page.root }}{% endif %}"><i class="flag-icon {{ language.flag }}"></i> {{ language.name }}</a>
+    {% endfor %}
+  </div>
+</div>
+<p class="copyright">KleisAuke.nl, Copyright &copy; {{ site.time | date: '%Y' }}</p>
+{% comment %} Bootstrap core JavaScript. Placed at the end of the document so the pages load faster {% endcomment %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="{{ page.root }}assets/js/jquery.min.js"><\/script>')</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+{% comment %} IE10 viewport hack for Surface/desktop Windows 8 bug {% endcomment %}
+<script src="{{ page.root }}assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.1/isotope.pkgd.min.js" integrity="sha384-zKykcVs0Wyy7O+3o0XHwl+IsDQzTtEit/zZCbtuKItqRwemhEEgd1nGHEoNBpYhR" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.0/imagesloaded.pkgd.min.js" integrity="sha384-3xxY8ddy1MSWjSviZS+o2t/bHR8RDhkSdogaUNO0dMRNkwhHd6CDFONgBBRlmfbg" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js" integrity="sha384-ONY61ZLz1u58DysdEyx5WTVtCmyoOmTguKXbWXptm9cDMUL6TJwszpRIHlrHrnnV" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightcase/2.3.4/js/lightcase.min.js" integrity="sha384-x98oh293nUgWTVAvAwDTNnKsIjSsK25LVbGP4Rr5usV3+9u++/3DOsSUx7bxKzF4" crossorigin="anonymous"></script>
+<script src="{{ page.root }}assets/js/main.js"></script>

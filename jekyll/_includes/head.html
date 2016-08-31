@@ -1,0 +1,26 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% comment %} The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags {% endcomment %}
+    <meta name="description" content="{% if site.meta.description[page.lang] %}{{ site.meta.description[page.lang] }}{% else %}{{ site.meta.description }}{% endif %}">
+    <meta name="keywords" content="{{ site.meta.keywords | join: ', ' }}">
+    <meta name="author" content="{{ site.author.name }}">
+    <title>{% if page.title %}{{ page.title }}{% elsif site.title[page.lang] %}{{ site.title[page.lang] }}{% else %}{{ site.title }}{% endif %}</title>
+    {% comment %} Favicons {% endcomment %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ page.root }}assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="{{ page.root }}assets/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ page.root }}assets/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="{{ page.root }}assets/images/favicons/manifest.json">
+    {% comment %} If we add `color="#2d89ef"` to this then W3C validator is complaining {% endcomment %}
+    <link rel="mask-icon" href="{{ page.root }}assets/images/favicons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="{{ page.root }}assets/images/favicons/favicon.ico">
+    <meta name="msapplication-config" content="{{ page.root }}assets/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#2d89ef">
+    {% comment %} Fonts {% endcomment %}
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Patua+One" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet" type="text/css">
+    {% comment %} Bootstrap core CSS + custom styles for this template {% endcomment %}
+    <link href="{{ page.root }}assets/css/main.css" rel="stylesheet">
+</head>

@@ -1,0 +1,35 @@
+---
+layout: page
+title: Resume
+id: resume
+root: ../
+permalink: en/resume
+lang: en
+---
+<h2 class="caption m-b-2"><span>{{ page.title }}</span></h2>
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <h3><span class="bg-inverse p-x-1 font-weight-bold">{% if site.resume.education-title[page.lang] %}{{ site.resume.education-title[page.lang] }}{% else %}{{ site.resume.education-title }}{% endif %}</span></h3>
+    {% for item in site.resume.education %}
+        <div class="bd-callout bd-callout-primary">
+            <h3>{% if item.organization[page.lang] %}{{ item.organization[page.lang] }}{% else %}{{ item.organization }}{% endif %} <span class="pull-xs-right">{% if item.duration[page.lang] %}{{ item.duration[page.lang] }}{% else %}{{ item.duration }}{% endif %}</span></h3>
+            <h4 class="m-l-1 text-muted">{% if item.degree[page.lang] %}{{ item.degree[page.lang] }}{% else %}{{ item.degree }}{% endif %}</h4>
+            <p class="m-b-0">{% if item.major[page.lang] %}{{ item.major[page.lang] }}{% else %}{{ item.major }}{% endif %}</p>
+        </div>
+    {% endfor %}
+    </div>
+
+    <div class="col-md-5 col-sm-12 offset-md-1">
+        <h3><span class="bg-inverse p-x-1 font-weight-bold">{% if site.resume.skills-title[page.lang] %}{{ site.resume.skills-title[page.lang] }}{% else %}{{ site.resume.skills-title }}{% endif %}</span></h3>
+        {% for item in site.resume.skills %}
+        <div class="bd-callout bd-callout-primary">
+            <div class="text-xs-left" id="skill-{{ forloop.index }}"><h4>{{ item.name }}</h4></div>
+            <progress class="progress" value="{{ item.percentage }}" max="100" aria-describedby="skill-{{ forloop.index }}">
+              <div class="progress">
+                <span class="progress-bar" style="width: {{ item.percentage }}%;"></span>
+              </div>
+            </progress>
+        </div>
+        {% endfor %}
+    </div>
+</div>

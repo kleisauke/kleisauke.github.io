@@ -1,0 +1,17 @@
+language: ruby
+cache: bundler
+sudo: false
+rvm:
+  - 2.1
+
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - ENCRYPTION_LABEL: "430149e204cc"
+    - COMMIT_AUTHOR_EMAIL: "postmaster@kleisauke.nl"
+
+branches:
+  only:
+    - develop
+
+script: bash ./deploy.sh
