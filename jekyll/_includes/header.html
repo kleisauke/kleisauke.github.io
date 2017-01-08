@@ -1,34 +1,34 @@
-<nav class="navbar navbar-light">
-    <div class="clearfix">
-        <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation">
-          &#9776;
-        </button>
-        <div class="navbar-brand hidden-sm-up">
-            <h1 class="m-b-0">{{ site.author.name }}</h1>
-            <p>{% if site.author.title[page.lang] %}{{ site.author.title[page.lang] }}{% else %}{{ site.author.title }}{% endif %}</p>
-        </div>
-    </div>
-    <div class="collapse navbar-toggleable-xs" id="navbar-header">
-      <ul class="nav navbar-nav" role="tablist">
-    {% for item in site.menu %}
-        <li class="nav-item">
-          {% if item.url[page.lang] %}
-              {% assign url = item.url[page.lang] %}
-          {% else %}
-              {% assign url = item.url %}
-          {% endif %}
-          {% assign toremove = page.lang | append: '/' %}
-          {% if page.permalink == toremove %}
-              {% assign toremove = page.lang %}
-          {% endif %}
-          {% assign permalink = page.permalink | remove: toremove %}
-          <a class="nav-link{% if page.layout == 'page' and permalink == url %} active{% elsif forloop.first and permalink == '/' %} active{% endif %}" href="{{ url }}"{% if page.layout != 'page' %} data-toggle="tab" data-target="{% if item.id[page.lang] %}{{ item.id[page.lang] }}{% else %}{{ item.id }}{% endif %}"{% endif %} role="tab"><span>{% if item.title[page.lang] %}{{ item.title[page.lang] }}{% else %}{{ item.title }}{% endif %}</span></a>
-        </li>
-    {% endfor %}
-      </ul>
-      <div class="navbar-brand m-l-1 hidden-xs-down">
-        <h1 class="m-b-0">{{ site.author.name }}</h1>
+<nav class="navbar navbar-toggleable navbar-light pb-3">
+  <div class="clearfix">
+    <button class="navbar-toggler navbar-toggler-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-brand hidden-sm-up">
+        <h1 class="mb-0">{{ site.author.name }}</h1>
         <p>{% if site.author.title[page.lang] %}{{ site.author.title[page.lang] }}{% else %}{{ site.author.title }}{% endif %}</p>
-      </div>
     </div>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-header">
+    <ul class="navbar-nav mr-auto">
+  {% for item in site.menu %}
+      <li class="nav-item">
+        {% if item.url[page.lang] %}
+            {% assign url = item.url[page.lang] %}
+        {% else %}
+            {% assign url = item.url %}
+        {% endif %}
+        {% assign toremove = page.lang | append: '/' %}
+        {% if page.permalink == toremove %}
+            {% assign toremove = page.lang %}
+        {% endif %}
+        {% assign permalink = page.permalink | remove: toremove %}
+        <a class="nav-link{% if page.layout == 'page' and permalink == url %} active{% elsif forloop.first and permalink == '/' %} active{% endif %}" href="{{ url }}"{% if page.layout != 'page' %} data-toggle="tab" data-target="{% if item.id[page.lang] %}{{ item.id[page.lang] }}{% else %}{{ item.id }}{% endif %}"{% endif %} role="tab"><span>{% if item.title[page.lang] %}{{ item.title[page.lang] }}{% else %}{{ item.title }}{% endif %}</span></a>
+      </li>
+  {% endfor %}
+    </ul>
+  </div>
+  <div class="navbar-brand ml-3 hidden-xs-down">
+    <h1 class="mb-0">{{ site.author.name }}</h1>
+    <p>{% if site.author.title[page.lang] %}{{ site.author.title[page.lang] }}{% else %}{{ site.author.title }}{% endif %}</p>
+  </div>
 </nav>

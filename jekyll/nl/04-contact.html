@@ -5,7 +5,7 @@ id: contact
 permalink: contact
 lang: nl
 ---
-<h2 class="caption m-b-2"><span>{{ page.title }}</span></h2>
+<h2 class="caption mb-4"><span>{{ page.title }}</span></h2>
 <div class="row">
  <div class="map col-md-7">
     <h3 class="font-weight-bold">{% if site.contact.location[page.lang] %}{{ site.contact.location[page.lang] }}{% else %}{{ site.contact.location }}{% endif %}</h3>
@@ -33,6 +33,7 @@ lang: nl
         <textarea class="form-control" id="message" name="message" rows="3" placeholder="{% if site.contact.message-label[page.lang] %}{{ site.contact.message-label[page.lang] }}{% else %}{{ site.contact.message-label }}{% endif %}" data-minlength="5" data-error="{% if site.contact.message-error[page.lang] %}{{ site.contact.message-error[page.lang] }}{% else %}{{ site.contact.message-error }}{% endif %}" required></textarea>
         <div class="form-control-feedback help-block with-errors"></div>
       </div>
+      <div id="recaptcha" class="g-recaptcha" data-sitekey="6Lf0CBEUAAAAAKwGVMcNTuyrq02yErXEUmQ1WQz5" data-callback="onSubmit" data-size="invisible"></div>
       <button type="submit" class="btn btn-primary">{% if site.contact.send-button[page.lang] %}{{ site.contact.send-button[page.lang] }}{% else %}{{ site.contact.send-button }}{% endif %}</button>
       <input type="hidden" name="lang" id="lang" value="{{ page.lang }}" />
     </form>

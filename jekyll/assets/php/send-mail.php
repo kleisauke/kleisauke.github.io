@@ -1,6 +1,11 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+
 error_reporting(0);
 header('Access-Control-Allow-Origin: *');
+
+$secret = '##REDACTED##';
+
 $emailTo = 'postmaster@kleisauke.nl';
 $successMessage = [
     'nl' => "Je bericht is succesvol verzonden.",
@@ -20,6 +25,7 @@ $messageMinLength = 5;
 
 $errorsArr = [
     'nl' => [
+        'recaptcha' => 'De reCAPTCHA was niet goed ingevuld. Ga terug en probeer het nogmaals.',
         'noInput' => 'Gelieve alle velden in te vullen!',
         'noName' => 'U heeft geen naam ingevoerd.',
         'noEmail' => 'U heeft geen e-mailadres ingevoerd.',
@@ -30,6 +36,7 @@ $errorsArr = [
         'problemSendingEmail' => 'Er is een probleem opgetreden tijdens het versturen van de e-mail. Probeer het later nog eens.'
     ],
     'frl' => [
+        'recaptcha' => 'De reCAPTCHA waard net goed ynfierd. Gean werom en besykje it nochris.',
         'noInput' => 'Wolsto asjeblyft alle fjilden ynfolje?',
         'noName' => 'Jo hat gjin namme ynfierd.',
         'noEmail' => 'Jo hat gjin e-mailadres ynfierd.',
@@ -40,6 +47,7 @@ $errorsArr = [
         'problemSendingEmail' => 'Der is in probleem optreden ûnder it ferstjoeren fan de e-mail. Besykje de webside letter nochris.'
     ],
     'en' => [
+        'recaptcha' => 'The reCAPTCHA wasn\'t entered correctly. Go back and try it again.',
         'noInput' => 'Please fill in all forms!',
         'noName' => 'Please enter a name',
         'noEmail' => 'Please enter a email address',
@@ -52,12 +60,19 @@ $errorsArr = [
 ];
 
 if (isset($_POST['lang']) && !empty($_POST['lang']) && isset($successMessage[$_POST['lang']])) {
+    $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+    $resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+
     $language = $_POST['lang'];
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $message = trim($_POST['message']);
 
     $errorMessage = '';
+
+    if (!$resp->isSuccess()) {
+        $errorMessage = $errorsArr[$language]['recaptcha'];
+    }
 
     $hasNameInput = !empty($name);
     $hasEmailInput = !empty($email);

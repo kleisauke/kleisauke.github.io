@@ -3,3 +3,4 @@ Gemfile.lock
 .DS_Store
 deploy_key
 .sass-cache/
+composer.lock

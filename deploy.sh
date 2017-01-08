@@ -8,6 +8,7 @@ OUT=html
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
+    # composer install
     bundle exec rake
     exit 0
 fi
@@ -26,6 +27,9 @@ cd ..
 
 # Clean out existing contents
 rm -rf $OUT/**/* || exit 0
+
+# Composer
+# composer install
 
 # Run our compile script
 bundle exec rake

@@ -1,0 +1,18 @@
+{
+    "name": "kleisauke/kleisauke.github.io",
+    "type": "project",
+    "version": "1.0.0",
+    "homepage": "https://github.com/kleisauke/kleisauke.github.io",
+    "authors": [
+        {
+            "name": "Kleis Auke Wolthuizen",
+            "email": "info@kleisauke.nl"
+        }
+    ],
+    "config": {
+        "vendor-dir": "jekyll/assets/php/vendor"
+    },
+    "require": {
+        "google/recaptcha": "~1.1"
+    }
+}

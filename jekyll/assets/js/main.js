@@ -86,32 +86,7 @@ function setupContact() {
                 e.preventDefault();
                 $("input[type='submit']").attr("disabled", "disabled");
 
-                $.ajax({
-                    type: "POST",
-                    cache: false,
-                    url: $(this).attr('action'),
-                    data: $(this).serialize(),
-                    dataType: "json",
-                    success: function(data, textStatus) {
-                        $("input[type='submit']").removeAttr("disabled");
-                        if (data.status == 'success') {
-                            $contactForm.hide();
-                            $contactForm.clearForm();
-                            $(".hidden-form > .alert").removeClass("alert-danger").addClass("alert-success");
-                            $(".hidden-form > .alert").text(data.message);
-                            $(".try-again").hide();
-                            $(".new-email").show();
-                            $(".hidden-form").show();
-                        } else {
-                            $contactForm.hide();
-                            $(".hidden-form > .alert").removeClass("alert-success").addClass("alert-danger");
-                            $(".hidden-form > .alert").text(data.error);
-                            $(".try-again").show();
-                            $(".new-email").hide();
-                            $(".hidden-form").show();
-                        }
-                    }
-                });
+                grecaptcha.execute();
             }
         })
 
@@ -120,6 +95,38 @@ function setupContact() {
             $(".hidden-form").hide();
         });
     }
+}
+
+function onSubmit(token) {
+    /* Cache contact-form */
+    var $contactForm = $('#contact-form');
+
+    $.ajax({
+        type: "POST",
+        cache: false,
+        url: $contactForm.attr('action'),
+        data: $contactForm.serialize(),
+        dataType: "json",
+        success: function(data, textStatus) {
+            $("input[type='submit']").removeAttr("disabled");
+            if (data.status == 'success') {
+                $contactForm.hide();
+                $contactForm.clearForm();
+                $(".hidden-form > .alert").removeClass("alert-danger").addClass("alert-success");
+                $(".hidden-form > .alert").text(data.message);
+                $(".try-again").hide();
+                $(".new-email").show();
+                $(".hidden-form").show();
+            } else {
+                $contactForm.hide();
+                $(".hidden-form > .alert").removeClass("alert-success").addClass("alert-danger");
+                $(".hidden-form > .alert").text(data.error);
+                $(".try-again").show();
+                $(".new-email").hide();
+                $(".hidden-form").show();
+            }
+        }
+    });
 }
 
 $.fn.clearForm = function() {

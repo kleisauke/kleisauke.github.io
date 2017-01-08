@@ -3,26 +3,8 @@
 ---
 @charset "utf-8";
 
-$grid-breakpoints: (
-  // Extra small screen / phone
-  xs: 0,
-  // Small screen / phone
-  sm: 544px,
-  // Medium screen / tablet
-  md: 768px,
-  // Large screen / desktop
-  lg: 992px,
-  // Extra large screen / wide desktop
-  xl: 1200px
-);
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import "bootstrap-custom";
-@import "lightcase";
-
-$fa-font-path: "../fonts";
-
-@import "font-awesome";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
 
 $background: url("../images/bckg/pattern-squares.png");
 
@@ -32,6 +14,20 @@ body {
   background-image: $background;
   padding-top: 20px;
   padding-bottom: 50px;
+}
+
+.fa-github {
+  color: #333;
+  &:hover {
+    color: #4078c0;
+  }
+}
+
+.fa-facebook-official {
+  color: #3b5998;
+  &:hover {
+    color: #4267b2;
+  }
 }
 
 h2, h3, h4, h5, h6, #filters li {
@@ -58,23 +54,34 @@ p {
   font-size: 0.875rem;
 }
 
-.profile-image img {
-  display: none;
+.profile-image {
+  padding-bottom: 15px;
 
-  &.active {
-    display: block;
+  img {
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 }
+
 
 .bg-inverse {
   color: #fff !important;
 }
 
 .navbar {
+  align-items: flex-start;
   margin-left: auto;
   margin-right: auto;
 
   @include make-container-max-widths;
+
+  .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .navbar-brand {
@@ -344,7 +351,7 @@ span.label.primary {
   margin: 5px 5px 0 0;
   width: 16px;
   height: 11px;
-  background: url(../images/flags/flags.png) no-repeat;
+  background: url("../images/flags/flags.png") no-repeat;
 }
 
 .flag-icon-gb {
@@ -368,6 +375,8 @@ span.label.primary {
 
 @include media-breakpoint-up(sm) {
   #navbar-header {
+    width: auto;
+
     .nav-item + .nav-item {
       margin-left: 0;
     }
@@ -380,13 +389,6 @@ span.label.primary {
     }
 
     ul {
-      display: inline-block;
-      position: relative;
-      float: left;
-      padding: 0;
-      margin: 0;
-      font-size: 1em;
-
       .nav-item {
         float: left;
       }
@@ -485,6 +487,8 @@ span.label.primary {
     padding-top: 80px;
     text-align: center;
     height: auto !important;
+    margin-left: auto;
+    margin-right: auto;
 
     ul {
       float: none;
