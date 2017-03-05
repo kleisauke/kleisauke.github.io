@@ -18,10 +18,22 @@ lang: nl
     </div>
     <div class="clearfix hidden-md-up"></div>
     <div class="col-md-4 col-12">
-        <ul class="list-unstyled personal-info">
-        {% for info in site.about.personal-info %}
-          <li class="mb-3"><span class="title">{% if info.title[page.lang] %}{{ info.title[page.lang] }}{% else %}{{ info.title }}{% endif %}</span><span class="value">{% if info.value[page.lang] %}{{ info.value[page.lang] }}{% else %}{{ info.value }}{% endif %}</span></li>
-        {% endfor %}
-        </ul>
+      <h3><span class="bg-inverse px-3 font-weight-bold">{{ site.about.personal-info-caption[page.lang] }}</span></h3>
+      <table class="table table-responsive table-sm">
+        <tbody>
+          {% for info in site.about.personal-info %}
+            <tr>
+              <td><i class="fa {{ info.icon }}"></i></td>
+              <td>{% if info.value[page.lang] %}{{ info.value[page.lang] }}{% else %}{{ info.value }}{% endif %}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div id="activity" class="col-md-6 col-12">
+      <h3><span class="bg-inverse px-3 font-weight-bold">{{ site.about.github-activity-caption[page.lang] }}</span></h3>
+      <p id="loading"><i class="fa fa-spinner fa-spin"></i> Loading...</p>
+      <ul class="list-group">
+      </ul>
     </div>
 </div>

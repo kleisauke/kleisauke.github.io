@@ -9,11 +9,11 @@ lang: frl
 <h2 class="caption mb-4"><span>{{ page.title }}</span></h2>
 <div class="row">
  <div class="map col-md-7">
-    <h3 class="font-weight-bold">{% if site.contact.location[page.lang] %}{{ site.contact.location[page.lang] }}{% else %}{{ site.contact.location }}{% endif %}</h3>
+    <h3><span class="bg-inverse px-3 font-weight-bold">{% if site.contact.location[page.lang] %}{{ site.contact.location[page.lang] }}{% else %}{{ site.contact.location }}{% endif %}</span></h3>
     <iframe src="{{ site.contact.map-src }}" allowfullscreen></iframe>
  </div>
  <div class="col-md-5">
-    <h3 class="font-weight-bold">{% if site.contact.email-title[page.lang] %}{{ site.contact.email-title[page.lang] }}{% else %}{{ site.contact.email-title }}{% endif %}</h3>
+    <h3><span class="bg-inverse px-3 font-weight-bold">{% if site.contact.email-title[page.lang] %}{{ site.contact.email-title[page.lang] }}{% else %}{{ site.contact.email-title }}{% endif %}</span></h3>
     <div class="hidden-form">
         <div class="alert" role="alert"></div>
         <button type="button" class="btn btn-primary new-email">{% if site.contact.resend-email[page.lang] %}{{ site.contact.resend-email[page.lang] }}{% else %}{{ site.contact.resend-email }}{% endif %}</button>

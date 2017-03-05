@@ -65,35 +65,31 @@ about:
     frl: ...in <span class="label primary">applicatieûntwikkeler</span>
     nl: ...een <span class="label primary">applicatieontwikkelaar</span>
   info:
-    en: Passionated by technology in general and web- and mobile development in particular. Currently studying computer science in Leeuwarden.<br><a href="https://github.com/kleisauke"><i class="fa fa-github fa-fw fa-2x"></i></a><a href="https://www.facebook.com/KleisAuke"><i class="fa fa-facebook-official fa-fw fa-2x"></i></a>
-    frl: Pasjonearre foar technology yn it algemien en web- en mobyl ûntwikkeling yn it bysûnder. Studearret op dit stuit ynformatika yn Ljouwert.<br><a href="https://github.com/kleisauke"><i class="fa fa-github fa-fw fa-2x"></i></a><a href="https://www.facebook.com/KleisAuke"><i class="fa fa-facebook-official fa-fw fa-2x"></i></a>
-    nl: Gepassioneerd door technologie in het algemeen en web- en mobile development in het bijzonder. Studeert momenteel informatica in Leeuwarden.<br><a href="https://github.com/kleisauke"><i class="fa fa-github fa-fw fa-2x"></i></a><a href="https://www.facebook.com/KleisAuke"><i class="fa fa-facebook-official fa-fw fa-2x"></i></a>
+    en: I'm Kleis Auke Wolthuizen, an application developer from Sneek. Since 2016, I study computer science at the NHL in Leeuwarden.
+    frl: Ik bin Kleis Auke Wolthuizen, in applicatieûntwikkeler út Snits. Sûnt 2016 studearje ik ynformatika oan de NHL yn Ljouwert.
+    nl: Ik ben Kleis Auke Wolthuizen, een applicatieontwikkelaar uit Sneek. Sinds 2016 volg ik de opleiding informatica aan de NHL in Leeuwarden.
   personal-info:
-    - title:
-        en: Name
-        frl: Namme
-        nl: Naam
-      value: Kleis Auke Wolthuizen
-    - title:
-        en: Age
-        frl: Leeftyd
-        nl: Leeftijd
-      value: 22
-    - title:
-        en: Address
-        frl: Adres
-        nl: Adres
-      value:
-        en: Kleine Vos 14, Sneek
-        frl: Kleine Vos 14, Snits
-        nl: Kleine Vos 14, Sneek
-    - title: E-mail
-      value: <a href="mailto:info@kleisauke.nl">info@kleisauke.nl</a>
-    - title:
-        en: Phone
-        frl: Mobyl
-        nl: Mobiel
-      value: +31 (0)6 1226 7733
+    - value: <a href="mailto:info@kleisauke.nl">info@kleisauke.nl</a>
+      icon: fa-envelope
+    - value: +31 (0)6 1226 7733
+      icon: fa-phone
+    - value:
+        en: <a href="/vCard.vcf">Electronic business card</a>
+        frl: <a href="/vCard.vcf">Elektroanyske fisitekaartsje</a>
+        nl: <a href="/vCard.vcf">Elektronische visitekaartje</a>
+      icon: fa-address-card
+    - value: <a href="https://github.com/kleisauke">GitHub</a>
+      icon: fa-github
+    - value: <a href="https://www.facebook.com/KleisAuke">Facebook</a>
+      icon: fa-facebook-official
+  personal-info-caption:
+    en: More information
+    frl: Mear ynformaasje
+    nl: Meer informatie
+  github-activity-caption:
+    en: My recent GitHub activity
+    frl: Myn resinte GitHub aktiviteit
+    nl: Mijn recente GitHub activiteit
   pictures:
     - alt:
         en: Profile picture
