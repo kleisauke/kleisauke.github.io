@@ -118,33 +118,17 @@ $(document).ready(function() {
 });
 
 /**
- * Generates an HTML snippet that contains a amount of time in days
- * that has passed between the provided date string and now. If the
- * difference is zero days, the string "today" is added to the HTML.
- * If the difference is one day, the string "a day ago" is added to
- * the HTML. Otherwise, the string "x days ago", where x is the
- * difference in days between the provided date and now, is added
- * to the HTML.
+ * Generates an HTML snippet that contains a amount of time that
+ * has passed between the provided date string and now. This function
+ * leverages Moment.js to provide ultimate control over manipulating
+ * time and dates.
  *
  * @param createdAt a string representation of a date.
  * @returns The amount of time in prose that has passed between
  *   the provided date and now.
  */
 function createEventDateHtml(createdAt) {
-    var elapsedDays = getElapsedDays(new Date(createdAt));
-    var dateText = "";
-
-    switch (elapsedDays) {
-        case 0:
-            dateText = "today";
-            break;
-        case 1:
-            dateText = "a day ago";
-            break;
-        default:
-            dateText = elapsedDays + " days ago";
-            break;
-    }
+    var dateText = moment(createdAt).fromNow();
 
     return "<small class=\"relativeTime text-mute\">" + dateText + "</small>";
 }
@@ -158,17 +142,6 @@ function createEventDateHtml(createdAt) {
 function extractPullRequestNumber(pullRequestUrl) {
     var index = pullRequestUrl.lastIndexOf("/");
     return pullRequestUrl.substring(index + 1);
-}
-
-/**
- * Determines the number of days that have elapsed between the provided
- * date and now.
- * @param startingDate A Date object that is to be compared to today to
- *   determine the number of elapsed days.
- * @return The difference in days betwee now and the provided date.
- */
-function getElapsedDays(startingDate) {
-    return Math.floor((new Date() - startingDate) / (24 * 60 * 60 * 1000));
 }
 
 /**
