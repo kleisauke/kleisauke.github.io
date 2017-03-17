@@ -125,6 +125,16 @@ ul.personal-info {
   }
 }
 
+#activity ul li h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.relativeTime {
+  white-space: nowrap;
+}
+
 .hidden-form {
   display: none;
 }

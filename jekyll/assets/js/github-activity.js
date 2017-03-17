@@ -87,7 +87,7 @@ $(document).ready(function() {
                     var eventDateHtml = createEventDateHtml(githubEvent.created_at);
                     activityList.append("<li id=\"" + githubEvent.id + "\" class=\"list-group-item list-group-item-action flex-column align-items-start\">" +
                         "<div class=\"d-flex w-100 justify-content-between\">" +
-                        "<h5 class=\"mb-1\"><span class=\"octicon " + octicon + "\"></span> <a href=\"" + link + "\" target=\"_blank\">" + text + "</a></h5>" +
+                        "<h5 class=\"mb-1 mr-3\"><span class=\"octicon " + octicon + "\"></span> <a href=\"" + link + "\" target=\"_blank\">" + text + "</a></h5>" +
                         eventDateHtml +
                         "</div></li>");
                     count++;
