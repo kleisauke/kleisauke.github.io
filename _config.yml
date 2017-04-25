@@ -207,7 +207,7 @@ contact:
     en: So I can get back to you
     frl: Sadat ik dy werom kin e-mailen
     nl: Zodat ik je terug kan e-mailen
-  email-post: http://kleisauke.nl/assets/php/send-mail.php
+  email-post: https://kleisauke.nl/assets/php/send-mail.php
   email-title:
     en: Send me an email
     frl: Stjoer my in e-mail
@@ -274,7 +274,7 @@ main-language: nl
 baseurl: ""
 
 # the base hostname & protocol
-url: "http://kleisauke.nl"
+url: "https://kleisauke.nl"
 
 # Build settings
 markdown: kramdown

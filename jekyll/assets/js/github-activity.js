@@ -9,7 +9,7 @@
  * @author Jonathan Pearlin
  * @date April 12, 2014
  *
- * Customized by Kleis Auke Wolthuizen for his personal website (http://kleisauke.nl/).
+ * Customized by Kleis Auke Wolthuizen for his personal website (https://kleisauke.nl/).
  */
 
 /**
