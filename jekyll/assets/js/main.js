@@ -8,14 +8,14 @@ $(document).ready(function() {
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
         var target;
         if ($(e.target).attr('data-target')) {
-            target = $(e.target).data('target').substr(1);
+            target = $(e.target).data('target');
             if (history.pushState) {
-                history.pushState(null, null, '#' + target);
+                history.pushState(null, null, target);
             } else {
-                location.hash = '#' + target;
+                location.hash = target;
             }
         }
-        if (target == 'portfolio') {
+        if (target == '#portfolio') {
             setupPortfolio();
         }
     });
@@ -69,9 +69,14 @@ function setupPortfolio() {
         // jQuery Lightcase
         $('a[data-rel^=lightcase]').lightcase({
             showSequenceInfo: false,
-            maxWidth: 1170,
-            maxHeight: 800,
-            type: 'ajax'
+            fixedRatio: false,
+            maxWidth: '100%',
+            maxHeight: '100%',
+            type: 'ajax',
+            ajax: {
+                width: 1200,
+                height: '100%'
+            }
         });
     }
 }
@@ -81,13 +86,16 @@ function setupContact() {
     var $contactForm = $('#contact-form');
 
     if ($contactForm.length) {
-        $contactForm.validator().on('submit', function(e) {
-            if (!e.isDefaultPrevented()) {
-                e.preventDefault();
+        $contactForm.on('submit', function(e) {
+            e.preventDefault();
+            if ($contactForm[0].checkValidity() == true) {
                 $("input[type='submit']").attr("disabled", "disabled");
-
+                grecaptcha.reset();
                 grecaptcha.execute();
+            } else {
+                e.stopPropagation();
             }
+            $contactForm.addClass("was-validated");
         })
 
         $('.new-email, .try-again').on('click', function(e) {
@@ -109,22 +117,21 @@ function onSubmit(token) {
         dataType: "json",
         success: function(data, textStatus) {
             $("input[type='submit']").removeAttr("disabled");
+            $contactForm.hide();
             if (data.status == 'success') {
-                $contactForm.hide();
+                $contactForm.removeClass("was-validated");
                 $contactForm.clearForm();
                 $(".hidden-form > .alert").removeClass("alert-danger").addClass("alert-success");
                 $(".hidden-form > .alert").text(data.message);
                 $(".try-again").hide();
                 $(".new-email").show();
-                $(".hidden-form").show();
             } else {
-                $contactForm.hide();
                 $(".hidden-form > .alert").removeClass("alert-success").addClass("alert-danger");
                 $(".hidden-form > .alert").text(data.error);
                 $(".try-again").show();
                 $(".new-email").hide();
-                $(".hidden-form").show();
             }
+            $(".hidden-form").show();
         }
     });
 }

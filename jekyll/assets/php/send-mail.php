@@ -8,9 +8,9 @@ $secret = '##REDACTED##';
 
 $emailTo = 'postmaster@kleisauke.nl';
 $successMessage = [
-    'nl' => "Je bericht is succesvol verzonden.",
-    'frl' => "Dyn berjocht is suksesfol ferstjoerd.",
-    'en' => "Your message has been successfully sent."
+    'nl' => 'Je bericht is succesvol verzonden.',
+    'frl' => 'Dyn berjocht is suksesfol ferstjoerd.',
+    'en' => 'Your message has been successfully sent.'
 ];
 
 $siteName = 'KleisAuke.nl';
@@ -59,7 +59,7 @@ $errorsArr = [
     ]
 ];
 
-if (isset($_POST['lang']) && !empty($_POST['lang']) && isset($successMessage[$_POST['lang']])) {
+if (!empty($_POST['lang']) && isset($successMessage[$_POST['lang']])) {
     $recaptcha = new \ReCaptcha\ReCaptcha($secret);
     $resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 
@@ -81,42 +81,32 @@ if (isset($_POST['lang']) && !empty($_POST['lang']) && isset($successMessage[$_P
     if (!$hasNameInput || !$hasEmailInput || !$hasTextInput) {
         if (!$hasNameInput && !$hasEmailInput && !$hasTextInput) {
             $errorMessage = $errorsArr[$language]['noInput'];
-        } else {
-            if (!$hasNameInput) {
-                $errorMessage = $errorsArr[$language]['noName'];
-            } else {
-                if (!$hasEmailInput) {
-                    $errorMessage = $errorsArr[$language]['noEmail'];
-                } else {
-                    if (!$hasTextInput) {
-                        $errorMessage = $errorsArr[$language]['noMessage'];
-                    }
-                }
-            }
+        } elseif (!$hasNameInput) {
+            $errorMessage = $errorsArr[$language]['noName'];
+        } elseif (!$hasEmailInput) {
+            $errorMessage = $errorsArr[$language]['noEmail'];
+        } elseif (!$hasTextInput) {
+            $errorMessage = $errorsArr[$language]['noMessage'];
         }
     }
 
     // Has leave message and e-mail address and name
     if (empty($errorMessage)) {
-        $isValidText = strlen($message) > $messageMinLength;
+        $isValidText = strlen($message) >= $messageMinLength;
         $isValidEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
         if (!$isValidEmail && !$isValidText) {
             $errorMessage = $errorsArr[$language]['invalidEmailAndMessage'];
-        } else {
-            if (!$isValidEmail) {
-                $errorMessage = $errorsArr[$language]['invalidEmail'];
-            } else {
-                if (!$isValidText) {
-                    $errorMessage = $errorsArr[$language]['invalidMessage'];
-                }
-            }
+        } elseif (!$isValidEmail) {
+            $errorMessage = $errorsArr[$language]['invalidEmail'];
+        } elseif (!$isValidText) {
+            $errorMessage = $errorsArr[$language]['invalidMessage'];
         }
     }
 
     function clean_string($string)
     {
-        $bad = array("content-type", "bcc:", "to:", "cc:", "href");
-        return str_replace($bad, "", $string);
+        $bad = array('content-type', 'bcc:', 'to:', 'cc:', 'href');
+        return str_replace($bad, '', $string);
     }
 
     $emailFrom = !empty($email) ? $email : $emailTo;
@@ -126,20 +116,17 @@ if (isset($_POST['lang']) && !empty($_POST['lang']) && isset($successMessage[$_P
     // create email headers
     $headers = 'From: ' . $name . ' <' . $emailFrom . '> ' . "\r\n" .
         'Reply-To: ' . $emailFrom . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+        'X-Mailer: PHP/' . PHP_VERSION;
 
     header('Content-type: application/json');
     if (!empty($errorMessage)) {
         $returnArr = array('status' => 'failed', 'error' => $errorMessage);
         echo json_encode($returnArr);
+    } elseif (@mail($emailTo, $subject[$language], $emailMessage, $headers)) {
+        $returnArr = array('status' => 'success', 'message' => $successMessage[$language]);
+        echo json_encode($returnArr);
     } else {
-        if (@mail($emailTo, $subject[$language], $emailMessage, $headers)) {
-            $returnArr = array('status' => 'success', 'message' => $successMessage[$language]);
-            echo json_encode($returnArr);
-        } else {
-            $returnArr = array('status' => 'failed', 'error' => $errorsArr[$language]['problemSendingEmail']);
-            echo json_encode($returnArr);
-        }
+        $returnArr = array('status' => 'failed', 'error' => $errorsArr[$language]['problemSendingEmail']);
+        echo json_encode($returnArr);
     }
 }
-?>

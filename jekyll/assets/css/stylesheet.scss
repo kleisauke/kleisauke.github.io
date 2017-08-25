@@ -3,6 +3,7 @@
 ---
 @charset "utf-8";
 
+@import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
@@ -66,8 +67,7 @@ p {
   }
 }
 
-
-.bg-inverse {
+.bg-dark {
   color: #fff !important;
 }
 
@@ -115,7 +115,7 @@ ul.personal-info {
       border-left-width: 0.6em;
       border-left-style: solid;
       border-bottom: 0.5em solid transparent;
-      border-left-color: $brand-primary;
+      border-left-color: theme-color("primary");
     }
   }
 
@@ -155,7 +155,7 @@ ul.personal-info {
       border-left-width: 0.6em;
       border-left-style: solid;
       border-bottom: 0.5em solid transparent;
-      border-left-color: $brand-primary;
+      border-left-color: theme-color("primary");
     }
   }
 
@@ -168,7 +168,7 @@ ul.personal-info {
 h2.caption span, ul.personal-info .title, #contact-form .title {
   color: #fff !important;
   text-transform: uppercase !important;
-  background-color: $brand-primary !important;
+  background-color: theme-color("primary") !important;
   font-weight: 700;
 }
 
@@ -188,7 +188,7 @@ h2.caption {
     border-left-width: 0.5em;
     border-left-style: solid;
     border-bottom: 0.5em solid transparent;
-    border-left-color: $brand-primary;
+    border-left-color: theme-color("primary");
   }
 }
 
@@ -197,11 +197,11 @@ span.label.primary {
   border-width: 0 0 3px 0;
   border-style: solid;
   border-radius: 0px;
-  border-color: $brand-primary;
+  border-color: theme-color("primary");
 }
 
 .bd-callout-primary {
-  border-left-color: $brand-primary !important;
+  border-left-color: theme-color("primary") !important;
 }
 
 .bd-callout {
@@ -259,7 +259,7 @@ span.label.primary {
       margin: 20% 15%;
       padding: 4px 0;
       text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
-      border-color: $brand-primary;
+      border-color: theme-color("primary");
       color: #fff;
     }
 
@@ -283,7 +283,7 @@ span.label.primary {
   .current a {
     border-width: 0 0 2px 0;
     border-style: solid;
-    border-color: $brand-primary;
+    border-color: theme-color("primary");
     color: #000;
   }
 }
@@ -305,7 +305,7 @@ span.label.primary {
     position: relative;
     margin: 0 0 8px 20px;
     padding: 0 10px 0 12px;
-    background: $gray-light;
+    background: theme-color("secondary");
     color: #fff;
     text-decoration: none;
   }
@@ -319,7 +319,7 @@ span.label.primary {
     width: 0;
     height: 0;
     border-color: transparent;
-    border-right-color: $gray-light;
+    border-right-color: theme-color("secondary");
     border-style: solid;
     border-width: 12px 12px 12px 0;
   }
@@ -388,6 +388,7 @@ span.label.primary {
 @include media-breakpoint-up(sm) {
   #navbar-header {
     width: auto;
+    flex-basis: auto;
 
     .nav-item + .nav-item {
       margin-left: 0;
@@ -478,7 +479,7 @@ span.label.primary {
 
     ul .nav-link.active span, ul .nav-link.active:hover span {
       margin-top: 0;
-      background: $brand-primary;
+      background: theme-color("primary");
     }
   }
 }

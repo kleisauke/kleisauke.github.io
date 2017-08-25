@@ -8,30 +8,34 @@ lang: nl
 <h2 class="caption mb-4"><span>{{ page.title }}</span></h2>
 <div class="row">
  <div class="map col-md-7">
-    <h3><span class="bg-inverse px-3 font-weight-bold">{% if site.contact.location[page.lang] %}{{ site.contact.location[page.lang] }}{% else %}{{ site.contact.location }}{% endif %}</span></h3>
+    <h3><span class="bg-dark px-3 font-weight-bold">{% if site.contact.location[page.lang] %}{{ site.contact.location[page.lang] }}{% else %}{{ site.contact.location }}{% endif %}</span></h3>
     <iframe src="{{ site.contact.map-src }}" allowfullscreen></iframe>
  </div>
  <div class="col-md-5">
-    <h3><span class="bg-inverse px-3 font-weight-bold">{% if site.contact.email-title[page.lang] %}{{ site.contact.email-title[page.lang] }}{% else %}{{ site.contact.email-title }}{% endif %}</span></h3>
+    <h3><span class="bg-dark px-3 font-weight-bold">{% if site.contact.email-title[page.lang] %}{{ site.contact.email-title[page.lang] }}{% else %}{{ site.contact.email-title }}{% endif %}</span></h3>
     <div class="hidden-form">
         <div class="alert" role="alert"></div>
         <button type="button" class="btn btn-primary new-email">{% if site.contact.resend-email[page.lang] %}{{ site.contact.resend-email[page.lang] }}{% else %}{{ site.contact.resend-email }}{% endif %}</button>
         <button type="button" class="btn btn-primary try-again">{% if site.contact.try-again[page.lang] %}{{ site.contact.try-again[page.lang] }}{% else %}{{ site.contact.try-again }}{% endif %}</button>
     </div>
-    <form id="contact-form" action="{{ site.contact.email-post }}" method="post">
+    <form id="contact-form" action="{{ site.contact.email-post }}" method="post" novalidate>
       <div class="form-group">
         <label class="title" for="name">{% if site.contact.name[page.lang] %}{{ site.contact.name[page.lang] }}{% else %}{{ site.contact.name }}{% endif %}</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="{% if site.contact.name-label[page.lang] %}{{ site.contact.name-label[page.lang] }}{% else %}{{ site.contact.name-label }}{% endif %}" required>
       </div>
       <div class="form-group">
         <label class="title" for="email">{% if site.contact.email[page.lang] %}{{ site.contact.email[page.lang] }}{% else %}{{ site.contact.email }}{% endif %}</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="{% if site.contact.email-label[page.lang] %}{{ site.contact.email-label[page.lang] }}{% else %}{{ site.contact.email-label }}{% endif %}" data-error="{% if site.contact.email-error[page.lang] %}{{ site.contact.email-error[page.lang] }}{% else %}{{ site.contact.email-error }}{% endif %}" required>
-        <div class="form-control-feedback help-block with-errors"></div>
+        <input type="email" class="form-control" id="email" name="email" placeholder="{% if site.contact.email-label[page.lang] %}{{ site.contact.email-label[page.lang] }}{% else %}{{ site.contact.email-label }}{% endif %}" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+        <div class="invalid-feedback">
+          {% if site.contact.email-error[page.lang] %}{{ site.contact.email-error[page.lang] }}{% else %}{{ site.contact.email-error }}{% endif %}
+        </div>
       </div>
       <div class="form-group">
         <label class="title" for="message">{% if site.contact.message[page.lang] %}{{ site.contact.message[page.lang] }}{% else %}{{ site.contact.message }}{% endif %}</label>
-        <textarea class="form-control" id="message" name="message" rows="3" placeholder="{% if site.contact.message-label[page.lang] %}{{ site.contact.message-label[page.lang] }}{% else %}{{ site.contact.message-label }}{% endif %}" data-minlength="5" data-error="{% if site.contact.message-error[page.lang] %}{{ site.contact.message-error[page.lang] }}{% else %}{{ site.contact.message-error }}{% endif %}" required></textarea>
-        <div class="form-control-feedback help-block with-errors"></div>
+        <textarea class="form-control" id="message" name="message" rows="3" placeholder="{% if site.contact.message-label[page.lang] %}{{ site.contact.message-label[page.lang] }}{% else %}{{ site.contact.message-label }}{% endif %}" minlength="5" required></textarea>
+        <div class="invalid-feedback">
+          {% if site.contact.message-error[page.lang] %}{{ site.contact.message-error[page.lang] }}{% else %}{{ site.contact.message-error }}{% endif %}
+        </div>
       </div>
       <div id="recaptcha" class="g-recaptcha" data-sitekey="6Lf0CBEUAAAAAKwGVMcNTuyrq02yErXEUmQ1WQz5" data-callback="onSubmit" data-size="invisible"></div>
       <button type="submit" class="btn btn-primary">{% if site.contact.send-button[page.lang] %}{{ site.contact.send-button[page.lang] }}{% else %}{{ site.contact.send-button }}{% endif %}</button>

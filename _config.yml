@@ -29,9 +29,9 @@ menu:
       frl: oer
       nl: over
     id:
-      en: "#about"
-      frl: "#oer"
-      nl: "#over"
+      en: "about"
+      frl: "oer"
+      nl: "over"
   - title:
       en: Resume
       frl: Yn it koart
@@ -41,12 +41,12 @@ menu:
       frl: yn-it-koart
       nl: in-het-kort
     id:
-      en: "#resume"
-      frl: "#yn-it-koart"
-      nl: "#in-het-kort"
+      en: "resume"
+      frl: "yn-it-koart"
+      nl: "in-het-kort"
   - title: Portfolio
     url: portfolio
-    id: "#portfolio"
+    id: "portfolio"
   - title:
       en: Contact
       frl: Kontakt
@@ -56,9 +56,9 @@ menu:
       frl: kontakt
       nl: contact
     id:
-      en: "#contact"
-      frl: "#kontakt"
-      nl: "#contact"
+      en: "contact"
+      frl: "kontakt"
+      nl: "contact"
 about:
   caption:
     en: ...an <span class="label primary">application developer</span>

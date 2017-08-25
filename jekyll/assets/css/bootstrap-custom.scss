@@ -5,6 +5,12 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "bootstrap-custom";
+
+$lightcase-custom: (
+  'text-shadow': 'none',
+  'text-color-viewport-small': #333
+);
+
 @import "lightcase";
 
 $fa-font-path: "../fonts";

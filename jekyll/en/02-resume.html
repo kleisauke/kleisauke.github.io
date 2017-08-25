@@ -9,7 +9,7 @@ lang: en
 <h2 class="caption mb-4"><span>{{ page.title }}</span></h2>
 <div class="row">
     <div class="col-md-6 col-sm-12">
-        <h3><span class="bg-inverse px-3 font-weight-bold">{% if site.resume.education-title[page.lang] %}{{ site.resume.education-title[page.lang] }}{% else %}{{ site.resume.education-title }}{% endif %}</span></h3>
+        <h3><span class="bg-dark px-3 font-weight-bold">{% if site.resume.education-title[page.lang] %}{{ site.resume.education-title[page.lang] }}{% else %}{{ site.resume.education-title }}{% endif %}</span></h3>
     {% for item in site.resume.education %}
         <div class="bd-callout bd-callout-primary">
             <h3>{% if item.organization[page.lang] %}{{ item.organization[page.lang] }}{% else %}{{ item.organization }}{% endif %} <span class="pull-right">{% if item.duration[page.lang] %}{{ item.duration[page.lang] }}{% else %}{{ item.duration }}{% endif %}</span></h3>
@@ -19,8 +19,8 @@ lang: en
     {% endfor %}
     </div>
 
-    <div class="col-md-5 col-sm-12 offset-md-1">
-        <h3><span class="bg-inverse px-3 font-weight-bold">{% if site.resume.skills-title[page.lang] %}{{ site.resume.skills-title[page.lang] }}{% else %}{{ site.resume.skills-title }}{% endif %}</span></h3>
+    <div class="col-md-5 col-sm-12 ml-md-auto">
+        <h3><span class="bg-dark px-3 font-weight-bold">{% if site.resume.skills-title[page.lang] %}{{ site.resume.skills-title[page.lang] }}{% else %}{{ site.resume.skills-title }}{% endif %}</span></h3>
         {% for item in site.resume.skills %}
         <div class="bd-callout bd-callout-primary">
             <div class="text-left" id="skill-{{ forloop.index }}"><h4>{{ item.name }}</h4></div>
