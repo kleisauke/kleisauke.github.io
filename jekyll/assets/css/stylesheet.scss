@@ -17,6 +17,10 @@ body {
   padding-bottom: 50px;
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.1;
+}
+
 .fa-github {
   color: #333;
   &:hover {
@@ -24,10 +28,10 @@ body {
   }
 }
 
-.fa-facebook-official {
-  color: #3b5998;
+.fa-linkedin {
+  color: #0077b5;
   &:hover {
-    color: #4267b2;
+    color: #0088cf;
   }
 }
 
@@ -389,6 +393,7 @@ span.label.primary {
   #navbar-header {
     width: auto;
     flex-basis: auto;
+    flex-grow: 0;
 
     .nav-item + .nav-item {
       margin-left: 0;

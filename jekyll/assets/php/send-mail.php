@@ -114,7 +114,7 @@ if (!empty($_POST['lang']) && isset($successMessage[$_POST['lang']])) {
     $emailMessage = PHP_EOL . clean_string($message);
 
     // create email headers
-    $headers = 'From: ' . $name . ' <' . $emailFrom . '> ' . "\r\n" .
+    $headers = 'From: ' . $name . ' <contactform@gra.kleisauke.nl> ' . "\r\n" .
         'Reply-To: ' . $emailFrom . "\r\n" .
         'X-Mailer: PHP/' . PHP_VERSION;
 

@@ -13,6 +13,6 @@
         "vendor-dir": "jekyll/assets/php/vendor"
     },
     "require": {
-        "google/recaptcha": "~1.1"
+        "google/recaptcha": "^1.1"
     }
 }
