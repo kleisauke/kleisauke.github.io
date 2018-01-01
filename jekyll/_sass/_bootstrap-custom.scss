@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
+ * Bootstrap v4.0.0-beta.3 (https://getbootstrap.com)
  * Customized by Kleis Auke Wolthuizen for his personal website (https://kleisauke.nl/).
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
@@ -9,8 +9,7 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-
-@import "bootstrap/print";
+@import "bootstrap/root";
 @import "bootstrap/reboot";
 @import "bootstrap/type";
 @import "bootstrap/images";
@@ -41,3 +40,4 @@
 // @import "bootstrap/popover";
 // @import "bootstrap/carousel";
 @import "bootstrap/utilities";
+@import "bootstrap/print";

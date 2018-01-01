@@ -12,7 +12,7 @@ lang: en
         <h3><span class="bg-dark px-3 font-weight-bold">{% if site.resume.education-title[page.lang] %}{{ site.resume.education-title[page.lang] }}{% else %}{{ site.resume.education-title }}{% endif %}</span></h3>
     {% for item in site.resume.education %}
         <div class="bd-callout bd-callout-primary">
-            <h3>{% if item.organization[page.lang] %}{{ item.organization[page.lang] }}{% else %}{{ item.organization }}{% endif %} <span class="pull-right">{% if item.duration[page.lang] %}{{ item.duration[page.lang] }}{% else %}{{ item.duration }}{% endif %}</span></h3>
+            <h3>{% if item.organization[page.lang] %}{{ item.organization[page.lang] }}{% else %}{{ item.organization }}{% endif %} <span class="float-right">{% if item.duration[page.lang] %}{{ item.duration[page.lang] }}{% else %}{{ item.duration }}{% endif %}</span></h3>
             <h4 class="ml-3 text-muted">{% if item.degree[page.lang] %}{{ item.degree[page.lang] }}{% else %}{{ item.degree }}{% endif %}</h4>
             <p class="mb-0">{% if item.major[page.lang] %}{{ item.major[page.lang] }}{% else %}{{ item.major }}{% endif %}</p>
         </div>

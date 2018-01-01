@@ -13,6 +13,9 @@ $lightcase-custom: (
 
 @import "lightcase";
 
+@import "font-awesome";
+
 $fa-font-path: "../fonts";
 
-@import "font-awesome";
+@import "font-awesome/fa-solid.scss";
+@import "font-awesome/fa-brands.scss";

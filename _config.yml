@@ -70,18 +70,18 @@ about:
     nl: Ik ben Kleis Auke Wolthuizen, een applicatieontwikkelaar uit Sneek. Sinds 2016 volg ik de opleiding informatica aan de NHL in Leeuwarden.
   personal-info:
     - value: <a href="mailto:info@kleisauke.nl">info@kleisauke.nl</a>
-      icon: fa-envelope
+      icon: fas fa-envelope
     - value: +31 (0)6 1226 7733
-      icon: fa-phone
+      icon: fas fa-phone
     - value:
         en: <a href="/vCard.vcf">Electronic business card</a>
         frl: <a href="/vCard.vcf">Elektroanyske fisitekaartsje</a>
         nl: <a href="/vCard.vcf">Elektronische visitekaartje</a>
-      icon: fa-address-card
+      icon: fas fa-address-card
     - value: <a href="https://github.com/kleisauke">GitHub</a>
-      icon: fa-github
+      icon: fab fa-github
     - value: <a href="https://www.linkedin.com/in/kleisauke/">LinkedIn</a>
-      icon: fa-linkedin
+      icon: fab fa-linkedin
   personal-info-caption:
     en: More information
     frl: Mear ynformaasje
