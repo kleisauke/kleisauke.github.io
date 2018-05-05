@@ -3,13 +3,11 @@ author:
   name: Kleis Auke Wolthuizen
   title:
     en: Application Developer
-    frl: Applicatieûntwikkeler
     nl: Applicatieontwikkelaar
 meta:
   app-name: KleisAuke.nl
   description:
     en: Personal website of Kleis Auke Wolthuizen
-    frl: Persoanlike webside fan Kleis Auke Wolthuizen
     nl: Persoonlijke website van Kleis Auke Wolthuizen
   keywords:
     - Kleis Auke Wolthuizen
@@ -22,51 +20,40 @@ meta:
 menu:
   - title:
       en: About me
-      frl: Oer
       nl: Over mij
     url:
       en: about
-      frl: oer
       nl: over
     id:
       en: "about"
-      frl: "oer"
       nl: "over"
   - title:
       en: Resume
-      frl: Yn it koart
       nl: In het kort
     url:
       en: resume
-      frl: yn-it-koart
       nl: in-het-kort
     id:
       en: "resume"
-      frl: "yn-it-koart"
       nl: "in-het-kort"
   - title: Portfolio
     url: portfolio
     id: "portfolio"
   - title:
       en: Contact
-      frl: Kontakt
       nl: Contact
     url:
       en: contact
-      frl: kontakt
       nl: contact
     id:
       en: "contact"
-      frl: "kontakt"
       nl: "contact"
 about:
   caption:
     en: ...an <span class="label primary">application developer</span>
-    frl: ...in <span class="label primary">applicatieûntwikkeler</span>
     nl: ...een <span class="label primary">applicatieontwikkelaar</span>
   info:
     en: I'm Kleis Auke Wolthuizen, an application developer from Sneek. Since 2016, I study computer science at the NHL in Leeuwarden.
-    frl: Ik bin Kleis Auke Wolthuizen, in applicatieûntwikkeler út Snits. Sûnt 2016 studearje ik ynformatika oan de NHL yn Ljouwert.
     nl: Ik ben Kleis Auke Wolthuizen, een applicatieontwikkelaar uit Sneek. Sinds 2016 volg ik de opleiding informatica aan de NHL in Leeuwarden.
   personal-info:
     - value: <a href="mailto:info@kleisauke.nl">info@kleisauke.nl</a>
@@ -75,7 +62,6 @@ about:
       icon: fas fa-phone
     - value:
         en: <a href="/vCard.vcf">Electronic business card</a>
-        frl: <a href="/vCard.vcf">Elektroanyske fisitekaartsje</a>
         nl: <a href="/vCard.vcf">Elektronische visitekaartje</a>
       icon: fas fa-address-card
     - value: <a href="https://github.com/kleisauke">GitHub</a>
@@ -84,22 +70,18 @@ about:
       icon: fab fa-linkedin
   personal-info-caption:
     en: More information
-    frl: Mear ynformaasje
     nl: Meer informatie
   github-activity-caption:
     en: My recent GitHub activity
-    frl: Myn resinte GitHub aktiviteit
     nl: Mijn recente GitHub activiteit
   pictures:
     - alt:
         en: Profile picture
-        frl: Profyl ôfbylding
         nl: Profielafbeelding
       cover: true
       src: assets/images/site/profile-1.jpg
     - alt:
         en: Profile picture
-        frl: Profyl ôfbylding
         nl: Profielafbeelding
       cover: false
       src: assets/images/site/profile-2.png
@@ -114,55 +96,42 @@ resume:
   education:
     - degree:
         en: Bachelor degree
-        frl: Bacheloroplieding
         nl: Bacheloropleiding
       duration:
         en: 2016 to present
-        frl: 2016 oant no
         nl: 2016 tot heden
       major:
         en: Computer Science
-        frl: Ynformatika
         nl: Informatica
       organization:
         en: NHL University Leeuwarden
-        frl: NHL Hegeskoalle Ljouwert
         nl: NHL Hogeschool Leeuwarden
     - degree:
         en: MBO (level 4)
-        frl: MBO (nivo 4)
         nl: MBO (niveau 4)
       duration:
         en: 2012 to 2016
-        frl: 2012 oant 2016
         nl: 2012 tot 2016
       major:
         en: Maritime Engineering, Ship and Yacht Construction
-        frl: Maritime Technyk, Skips- en Jachtbouw
         nl: Maritieme Techniek, Scheeps- en Jachtbouwkunde
       organization:
         en: ROC Friese Poort Sneek
-        frl: ROC Friese Poort Snits
         nl: ROC Friese Poort Sneek
     - degree:
         en: VMBO (middle management-oriented learning path)
-        frl: VMBO (kaderberopsrjochte leerweg)
         nl: VMBO (kaderberoepsgerichte leerweg)
       duration:
         en: 2007 to 2012
-        frl: 2007 oant 2012
         nl: 2007 tot 2012
       major:
         en: Secondary education
-        frl: Fuortset ûnderwiis
         nl: Voortgezet onderwijs
       organization:
         en: Maritime Academy Harlingen
-        frl: Maritime Akademy Harns
         nl: Maritieme Academie Harlingen
   education-title:
     en: Education
-    frl: Opliedingen
     nl: Opleidingen
   skills:
     - name: PHP
@@ -170,16 +139,13 @@ resume:
     - name: Java
       percentage: 70
     - name: C#
+      percentage: 75
+    - name: C++
       percentage: 60
-    - name: HTML5
-      percentage: 100
-    - name: CSS3
-      percentage: 60
-    - name: jQuery / JavaScript
-      percentage: 70
+    - name: HTML, CSS3, JavaScript
+      percentage: 80
   skills-title:
     en: Development Skills
-    frl: Feardichheden
     nl: Vaardigheden
 portfolio:
   filters:
@@ -187,7 +153,6 @@ portfolio:
       data-filter: "*"
       name:
         en: all
-        frl: alles
         nl: alles
     - current: false
       data-filter: .mobile
@@ -196,69 +161,62 @@ portfolio:
       data-filter: .web
       name:
         en: website
-        frl: webside
         nl: website
+    - current: false
+      data-filter: .library
+      name:
+        en: library
+        nl: bibliotheek
   items:
     - id: portfolio-item-01
     - id: portfolio-item-02
+    - id: portfolio-item-03
+    - id: portfolio-item-04
 contact:
   email: E-mail
   email-label:
     en: So I can get back to you
-    frl: Sadat ik dy werom kin e-mailen
     nl: Zodat ik je terug kan e-mailen
   email-post: https://kleisauke.nl/assets/php/send-mail.php
   email-title:
     en: Send me an email
-    frl: Stjoer my in e-mail
     nl: Stuur mij een e-mail
   email-error:
     en: The email address you entered does not appear to be a valid address.
-    frl: It e-mailadres datsto hast opjûn liket net in jildich adres te wêzen.
     nl: Het e-mailadres dat u hebt opgegeven lijkt niet een geldig adres te zijn.
   location:
     en: Where am I in this world?
-    frl: Wêr bin ik yn dizze wrâld?
     nl: Waar ben ik in deze wereld?
   map-src: https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d38393.16892691919!2d5.6720706!3d53.0280375!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c8f1b7ff39f791%3A0x75235a11696bd87a!2sSneek!5e0!3m2!1snl!2snl!4v1442493564758
   message:
     en: Message
-    frl: Berjocht
     nl: Bericht
   message-label:
     en: Enter your message...
-    frl: Typ hjir dyn berjocht...
     nl: Typ hier je bericht...
   message-error:
     en: The message you entered is too short. It must be at least 5 characters.
-    frl: It berjocht datsto hast ynfierd is te koart. It moat op syn minst 5 tekens lang syn.
     nl: Het bericht die u hebt ingevoerd is te kort. Het moet minimaal 5 tekens lang zijn.
   name:
     en: Name
-    frl: Namme
     nl: Naam
   name-label:
     en: What is your name?
-    frl: Wat is dyn namme?
     nl: Wat is je naam?
   resend-email:
     en: Send another email
-    frl: Noch in e-mail stjoere
     nl: Nog een e-mail sturen
   send-button:
     en: Send
-    frl: Ferstjoere
     nl: Verzenden
   try-again:
     en: Try again
-    frl: Besykje it noch ris
     nl: Probeer het nog eens
 collections:
   - portfolio_collection
 footer:
   language-chooser:
     en: Change your language
-    frl: Wizigje jo taal
     nl: Wijzig je taal
   languages:
     - flag: flag-icon-nl
@@ -267,9 +225,6 @@ footer:
     - flag: flag-icon-gb
       name: English
       short: en
-    - flag: flag-icon-frl
-      name: Frysk
-      short: frl
 main-language: nl
 baseurl: ""
 

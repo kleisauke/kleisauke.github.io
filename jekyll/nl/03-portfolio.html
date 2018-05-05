@@ -12,9 +12,9 @@ lang: nl
 {% endfor %}
 </ul>
 <div id="portfolio-items" class="row">
-{% for item in site.portfolio.items %}
+{% for item in site.portfolio.items reversed %}
   {% assign portfolio=site.portfolio_collection | where:"lang", page.lang | where:"portfolio-id", item.id | first %}
-  <div class="item {{ portfolio.type }} col-12 col-sm-6 col-lg-4">
+  <div class="item {{ portfolio.type }} col-12 col-sm-6 col-lg-4 mb-4">
     <div class="card">
         <div class="card-box">
             <img class="card-img-top w-100" src="{{ portfolio.image-small | prepend: page.root }}" alt="{{ portfolio.title }}">

@@ -9,7 +9,6 @@ $secret = '##REDACTED##';
 $emailTo = 'postmaster@kleisauke.nl';
 $successMessage = [
     'nl' => 'Je bericht is succesvol verzonden.',
-    'frl' => 'Dyn berjocht is suksesfol ferstjoerd.',
     'en' => 'Your message has been successfully sent.'
 ];
 
@@ -17,7 +16,6 @@ $siteName = 'KleisAuke.nl';
 
 $subject = [
     'nl' => 'Contactformulier bericht van ' . $siteName,
-    'frl' => 'Kontakt formulier berjocht fan ' . $siteName,
     'en' => 'Contact form message from ' . $siteName
 ];
 
@@ -34,17 +32,6 @@ $errorsArr = [
         'invalidMessage' => 'Het bericht die u hebt ingevoerd is te kort. Het moet minimaal ' . $messageMinLength . ' tekens lang zijn.',
         'invalidEmailAndMessage' => 'Het e-mailadres en het bericht die u hebt ingevoerd zijn niet geldig.',
         'problemSendingEmail' => 'Er is een probleem opgetreden tijdens het versturen van de e-mail. Probeer het later nog eens.'
-    ],
-    'frl' => [
-        'recaptcha' => 'De reCAPTCHA waard net goed ynfierd. Gean werom en besykje it nochris.',
-        'noInput' => 'Wolsto asjeblyft alle fjilden ynfolje?',
-        'noName' => 'Jo hat gjin namme ynfierd.',
-        'noEmail' => 'Jo hat gjin e-mailadres ynfierd.',
-        'noMessage' => 'Jo hat gjin berjocht ynfierd',
-        'invalidEmail' => 'It e-mailadres datsto hast opjûn liket net in jildich adres te wêzen.',
-        'invalidMessage' => 'It berjocht datsto hast ynfierd is te koart. It moat op syn minst ' . $messageMinLength . ' tekens lang syn.',
-        'invalidEmailAndMessage' => 'It e-mailadres en it berjocht datsto hast ynfierd syn net jildich.',
-        'problemSendingEmail' => 'Der is in probleem optreden ûnder it ferstjoeren fan de e-mail. Besykje de webside letter nochris.'
     ],
     'en' => [
         'recaptcha' => 'The reCAPTCHA wasn\'t entered correctly. Go back and try it again.',
