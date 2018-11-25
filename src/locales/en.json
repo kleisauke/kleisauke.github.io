@@ -1,0 +1,199 @@
+{
+  "language": "English",
+  "author": {
+    "name": "Kleis Auke Wolthuizen",
+    "caption": "Application developer"
+  },
+  "meta": {
+    "description": "Personal website of Kleis Auke Wolthuizen"
+  },
+  "routes": {
+    "about": "/en",
+    "resume": "/en/resume",
+    "portfolio": "/en/portfolio/:id?",
+    "contact": "/en/contact"
+  },
+  "menu": {
+    "about": "About me",
+    "resume": "Resume",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "about": {
+    "subtitle": {
+      "personal-info": "More information",
+      "github-activity": "My recent GitHub activity"
+    },
+    "caption": {
+      "prefix": "...an",
+      "highlight": "application developer"
+    },
+    "info": "I'm Kleis Auke Wolthuizen, an application developer from Sneek. Since 2016, I study computer science at the NHL in Leeuwarden.",
+    "vcard": "Electronic business card",
+    "more-activity": "See all activity on GitHub",
+    "meta": {
+      "picture": "Profile picture"
+    }
+  },
+  "resume": {
+    "subtitle": {
+      "education": "Education",
+      "skills": "Development Skills"
+    },
+    "education": {
+      "higher": {
+        "organization": "NHL Stenden University of Applied Sciences",
+        "degree": "Bachelor degree",
+        "major": "Computer Science"
+      },
+      "middle-level": {
+        "organization": "ROC Friese Poort Sneek",
+        "degree": "MBO (level 4)",
+        "major": "Maritime Engineering, Ship and Yacht Construction"
+      },
+      "secondary": {
+        "organization": "Maritime Academy Harlingen",
+        "degree": "VMBO (middle management-oriented learning path)",
+        "major": "Secondary education"
+      }
+    },
+    "present": "present"
+  },
+  "portfolio": {
+    "type": {
+      "app": "App",
+      "website": "Website",
+      "library": "Library"
+    },
+    "filter": {
+      "all": "all",
+      "library": "library"
+    },
+    "details": "See project details",
+    "technology": "Technology",
+    "view-documentation": "View the documentation",
+    "visit-website": "Visit the website",
+    "view-sourcecode": "View the source code",
+    "download-app": "Download the app",
+    "items": {
+      "net-vips": {
+        "info": [
+          {
+            "title": "Description",
+            "paragraphs": [
+              "I've created this full libvips binding for .NET in my spare time. It has a test-suite which passes with no memory leaks, it’s in <a href=\"https://www.nuget.org/packages/NetVips\">NuGet</a>, so it’s easy to install on Linux, macOS and Windows, and it has nice documentation."
+            ]
+          },
+          {
+            "title": "Performance oriented",
+            "paragraphs": [
+              "The repo includes <a href=\"https://github.com/kleisauke/net-vips/tree/master/tests/NetVips.Benchmarks\">benchmarks which test the performance against Magick.NET</a>, the ImageMagick binding for .NET. On that test, NetVips is 8x faster than Magick.NET."
+            ]
+          },
+          {
+            "title": "Client",
+            "paragraphs": [
+              "None – on own initiative"
+            ]
+          }
+        ]
+      },
+      "images-weserv": {
+        "info": [
+          {
+            "title": "Description",
+            "paragraphs": [
+              "Images.weserv.nl is an image service that is free for use to anyone, and we offer it as-is, it's just basic image resizing, available to anyone, easy to use. We try to keep everyone as happy as we can."
+            ]
+          },
+          {
+            "title": "History",
+            "paragraphs": [
+              "The project started around 2007 on some spare servers. It was targeted at customers, to be used in websites, web applications and mobile applications. By making it freely available, it saved traffic (through compression) and offloaded the main servers, because customers didn't have to use poor self-written scripts for image resizing.",
+              "We gained experience with different user cases, and the separation from the main servers enabled us to use the latest and greatest software stack."
+            ]
+          },
+          {
+            "title": "Nowadays",
+            "paragraphs": [
+              "Since 2011 images.weserv.nl is privately funded, and used as a testbed for new techniques in resizing, recognition and processing.",
+              "Operating costs of the image service are very low. To prevent conflicts of interest, we never accepted payments or donations in any form. Our intend is to keep the service running for many years to come."
+            ]
+          }
+        ]
+      },
+      "rocrooster-web": {
+        "info": [
+          {
+            "title": "Description",
+            "paragraphs": [
+              "An app also includes a website. In this case, this website is designed to synchronize the timetables of the school timetable website.",
+              "The website uses the latest technologies to make the schedules more quickly appear on the app.",
+              "Users can view their schedule on <a href=\"https://rocrooster.nl/rooster\">rocrooster.nl/rooster</a>. For developers there is also an API available, this can be viewed at <a href=\"https://rocrooster.nl/api\">rocrooster.nl/api</a>."
+            ]
+          },
+          {
+            "title": "Client",
+            "paragraphs": [
+              "None – on own initiative"
+            ]
+          }
+        ]
+      },
+      "rocrooster-app": {
+        "info": [
+          {
+            "title": "Description",
+            "paragraphs": [
+              "The ROC Rooster App is designed for students and teachers of the ROC Friese Poort. The app ensures you always have your schedule at hand, even without internet.",
+              "In about four months, I went from an idea and design to realization, and from realization to implementation. I have published the first version of the app on the Google Play store on March 1, 2015. The app has currently between 500 and 1000 active users."
+            ]
+          },
+          {
+            "title": "Client",
+            "paragraphs": [
+              "None – on own initiative"
+            ]
+          }
+        ]
+      }
+    },
+    "urls": {
+      "linux": "https://en.wikipedia.org/wiki/Linux",
+      "net": "https://en.wikipedia.org/wiki/.NET",
+      "java": "https://en.wikipedia.org/wiki/Java_(programming_language)"
+    }
+  },
+  "contact": {
+    "subtitle": {
+      "location": "Where am I in this world?",
+      "email": "Send me an email"
+    },
+    "form": {
+      "name": {
+        "title": "Name",
+        "label": "What is your name?",
+        "error": "Please fill in your name"
+      },
+      "email": {
+        "title": "E-mail",
+        "label": "So I can get back to you",
+        "error": "The email address you entered does not appear to be a valid address."
+      },
+      "message": {
+        "title": "Message",
+        "label": "Enter your message...",
+        "error": "The message you entered is too short. It must be at least 5 characters."
+      },
+      "send-button": "Send",
+      "resend-button": "Send another email",
+      "try-again": "Try again"
+    }
+  },
+  "footer": {
+    "language-chooser": "Change your language"
+  },
+  "prepositions": {
+    "to": "to"
+  }
+}

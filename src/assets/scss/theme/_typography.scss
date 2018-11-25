@@ -1,0 +1,41 @@
+h1 {
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 1.0rem;
+}
+
+h3 {
+  font-size: 0.75rem;
+}
+
+
+h1.caption {
+  span {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    background-color: $primary-color;
+    font-weight: 700;
+    padding: 5px 10px 5px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  span:after {
+    content: "";
+    position: absolute;
+    bottom: -0.5em;
+    left: 0;
+    border-bottom: 0.5em solid transparent;
+    border-left: 0.5em solid $primary-color;
+  }
+}
+
+span.label-primary {
+  color: $body-font-color !important;
+  background: initial !important;
+  padding-bottom: 5px;
+  border: 0 solid $primary-color;
+  border-bottom-width: 3px;
+}

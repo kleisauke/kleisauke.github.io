@@ -1,0 +1,121 @@
+@media (min-width: $size-md) {
+  .navbar {
+    ul {
+      padding: 0;
+      list-style: none;
+      margin: 0.8rem 0 0.8rem 0;
+
+      .menu-item {
+        float: left;
+        padding: 0;
+
+        & + .menu-item {
+          margin-top: 0;
+        }
+      }
+
+      &:after, &:before {
+        margin-top: 0.5em;
+        content: "";
+        float: left;
+        border: 1.5em solid #f3f3f3;
+      }
+
+      &:after {
+        border-right-color: transparent !important;
+      }
+
+      &:before {
+        border-left-color: transparent !important;
+      }
+
+      span {
+        display: inline-block;
+        line-height: 3em;
+        padding: 0 1em;
+        margin-top: 0.5em;
+        background: #f3f3f3;
+        position: relative;
+        transition: background-color 0.2s, margin-top 0.2s;
+
+        &:before {
+          left: 0;
+          border-right: 0.5em solid #ccc;
+        }
+
+        &:after {
+          right: 0;
+          border-left: 0.5em solid #ccc;
+        }
+
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          top: 3em;
+          border-bottom: 0.5em solid #f3f3f3;
+        }
+      }
+      .nav-link {
+        display: block;
+        margin: 0;
+        padding: 0;
+        color: $header-text-dark;
+        box-shadow: none;
+        background: none !important;
+
+        &:link, &:visited {
+          text-decoration: none;
+          float: left;
+          height: 3.5em;
+          overflow: hidden;
+        }
+
+        &:hover {
+          color: $header-text-dark;
+          span {
+            margin-top: 4px;
+            background: #ddd;
+          }
+        }
+
+        &:after, &.active {
+          color: $header-text-light;
+        }
+
+        &.active span, &.active:hover span {
+          margin-top: 0;
+          background: $primary-color;
+        }
+      }
+    }
+  }
+
+  .off-canvas {
+    margin: 0;
+    .off-canvas-sidebar {
+      position: relative;
+      background: none;
+      box-shadow: none;
+      transform: none;
+    }
+  }
+}
+
+@media (max-width: $size-md) {
+  .navbar-brand {
+    align-items: center;
+    margin-left: auto;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.off-canvas {
+  .off-canvas-overlay {
+    cursor: auto;
+  }
+}

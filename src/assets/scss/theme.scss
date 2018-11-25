@@ -1,0 +1,10 @@
+// Core variables and mixins
+@import "~spectre.css/src/variables";
+@import "~spectre.css/src/mixins";
+
+@import 'theme/variables';
+@import "theme/base";
+@import 'theme/typography';
+
+@import 'theme/header';
+@import 'theme/footer';

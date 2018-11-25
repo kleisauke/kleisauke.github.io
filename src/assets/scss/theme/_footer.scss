@@ -1,0 +1,39 @@
+.flag {
+  background: url("./assets/images/flags.png") no-repeat;
+  vertical-align: -20% !important;
+  &.icon-en {
+    background-position: -32px 0;
+  }
+
+  &.icon-nl {
+    background-position: -16px 0;
+  }
+}
+
+#language-chooser {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dropup .menu {
+  -webkit-animation: show .15s ease 1;
+  animation: show .15s ease 1;
+  top: auto !important;
+  bottom: 100%;
+  -webkit-transform: initial;
+  transform: initial;
+}
+
+.dropup .icon-caret::before {
+  transform: translate(-50%, -25%) rotate(180deg);
+}
