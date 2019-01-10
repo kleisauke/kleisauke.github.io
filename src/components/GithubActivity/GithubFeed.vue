@@ -125,6 +125,7 @@
             color: #bbb;
         }
         .event-detail {
+            display: block;
             list-style: none;
             color: #666666;
         }

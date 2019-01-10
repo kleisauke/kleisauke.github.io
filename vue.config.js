@@ -5,8 +5,8 @@ const ScriptExtWebpackPlugin = require('script-ext-html-webpack-plugin')
 const productionPlugins = [
   new PrerenderSpaPlugin({
     staticDir: path.join(__dirname, 'dist'),
-    outputDir: path.join(__dirname, 'dist', process.env.BASE_URL),
-    indexPath: path.join(__dirname, 'dist', process.env.BASE_URL, 'index.html'),
+    outputDir: path.join(__dirname, 'dist', process.env.PUBLIC_PATH),
+    indexPath: path.join(__dirname, 'dist', process.env.PUBLIC_PATH, 'index.html'),
     routes: [
       '/',
       '/in-het-kort',
@@ -36,8 +36,8 @@ const productionPlugins = [
 ]
 
 module.exports = {
-  baseUrl: process.env.BASE_URL,
-  outputDir: path.join(__dirname, 'dist', process.env.BASE_URL),
+  publicPath: process.env.PUBLIC_PATH,
+  outputDir: path.join(__dirname, 'dist', process.env.PUBLIC_PATH),
   lintOnSave: false,
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === 'production') {

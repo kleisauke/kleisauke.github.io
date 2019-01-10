@@ -19,8 +19,8 @@
         </div>
         <ul>
             <li class="event-text event-detail">
-                <span class="event-octicon octicon octicon-chevron-right dashboard-event-icon"/>{{
-                event.payload.issue.title }}
+                <span class="event-octicon octicon octicon-chevron-right dashboard-event-icon"/>
+                {{ event.payload.issue.title }}
             </li>
         </ul>
     </div>

@@ -1,5 +1,5 @@
 const hash = sha => {
-  return sha.substr(sha.length - 6)
+  return sha.substr(0, 7)
 }
 
 const branch = ref => {

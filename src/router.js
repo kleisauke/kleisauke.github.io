@@ -52,7 +52,7 @@ languages.forEach(lang => {
 
 export default new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: process.env.PUBLIC_PATH,
   routes: [
     ...routes,
     {
