@@ -32,6 +32,11 @@ const productionPlugins = [
       keepClosingSlash: true,
       sortAttributes: true,
     },
+    renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
+      // Inject the global variable `window.__PRERENDER_INJECTED`
+      // in order to detect whether we are inside the renderer.
+      inject: {},
+    })
   }),
 ]
 

@@ -61,6 +61,11 @@
       },
     },
     mounted () {
+      // This is injected by prerender-spa-plugin on build time, we don't prerender GitHub activity.
+      if (window.__PRERENDER_INJECTED) {
+        return
+      }
+
       axios.get('https://api.github.com/users/kleisauke/events').then(events => {
         this.loading = false
         this.error = false
