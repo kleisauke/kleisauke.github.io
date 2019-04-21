@@ -21,6 +21,7 @@
   import PushEvent from './events/PushEvent.vue'
   import PullRequestEvent from './events/PullRequestEvent.vue'
   import CreateEvent from './events/CreateEvent.vue'
+  import ReleaseEvent from './events/ReleaseEvent.vue'
   import WatchEvent from './events/WatchEvent.vue'
   import DeleteEvent from './events/DeleteEvent.vue'
   import IssuesEvent from './events/IssuesEvent.vue'
@@ -38,6 +39,7 @@
       PushEvent,
       PullRequestEvent,
       CreateEvent,
+      ReleaseEvent,
       WatchEvent,
       DeleteEvent,
       IssuesEvent,
@@ -113,8 +115,11 @@
         border-top: 1px solid #f1f1f1;
         padding-left: 1rem;
         .event-octicon {
+            width: 16px;
+            height: 16px;
+            margin-right: 0.3rem;
             color: #bbb;
-            margin-right: 0.4rem;
+            text-align: center;
         }
         ul {
             margin: 0 1.2rem 0.8rem;
