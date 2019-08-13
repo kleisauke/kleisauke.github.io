@@ -1,0 +1,37 @@
+{% if site.style == 'dark' %}
+  {% assign icon_color = "#ffffff" %}
+{% else %}
+  {% assign icon_color = "#24292e" %}
+{% endif %}
+
+{% assign content = page.content %}
+
+{% assign user = site.github.owner %}
+
+{% assign page_title = user.name %}
+
+{% if user.bio %}
+  {% assign meta_description = user.bio | strip_html | strip_newlines | xml_escape | truncate: 300 %}
+{% else %}
+  {% assign meta_description = "An application developer from Sneek, The Netherlands" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ meta_description }}" />
+    <meta property="og:title" content="{{ user.name }}" />
+    <meta property="og:image" content="{{ user.avatar_url }}" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicons/apple-touch-icon.png" | relative_url }}">
+    <link rel="manifest" href="{{ "/site.webmanifest" | relative_url }}">
+    <link rel="mask-icon" href="{{ "/assets/favicons/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#3085ee">
+    <meta name="msapplication-config" content="{{ "/assets/favicons/browserconfig.xml" | relative_url }}">
+    <meta name="theme-color" content="#3085ee">
+    <link href="{{ "/assets/styles.css" | relative_url }}" rel="stylesheet" type="text/css">
+  </head>
+  <body class="bg-white min-height-full"{% if site.style == 'dark' %} style="background-color: #2f363d !important"{% endif %}>

@@ -1,19 +1,18 @@
-# kleisauke.github.io [![Build Status](https://travis-ci.org/kleisauke/kleisauke.github.io.svg?branch=develop)](https://travis-ci.org/kleisauke/kleisauke.github.io)
+# kleisauke.github.io
 
-> Personal website of Kleis Auke Wolthuizen
+Personal website of Kleis Auke Wolthuizen.
 
-## Build Setup
+## Getting Started
 
 ```bash
-# Project setup
-$ npm install
+git clone https://github.com/kleisauke/kleisauke.github.io.git
+cd kleisauke.github.io
 
-# Compiles and hot-reloads for development
-$ npm run serve
+# Ensures that all needed RubyGems are installed
+gem install jekyll bundler && bundle install
 
-# Compiles and minifies for production
-$ npm run build
+# Build the site and make it available on a local server
+bundle exec jekyll serve
 
-# Lints and fixes files
-$ npm run lint
+# Browse to http://localhost:4000
 ```
