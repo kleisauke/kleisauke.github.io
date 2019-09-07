@@ -1,5 +1,5 @@
 {
-	"name": "KleisAuke.nl",
+    "name": "KleisAuke.nl",
     "short_name": "KleisAuke.nl",
     "icons": [
         {
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-	"theme_color": "#3085ee",
+    "theme_color": "#3085ee",
     "background_color": "#ffffff",
     "display": "standalone"
 }
