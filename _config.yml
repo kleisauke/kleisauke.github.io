@@ -66,6 +66,7 @@ topics:
     image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/linux/linux.png
   - name: nginx
     web_url: https://github.com/topics/nginx
+    image_url: https://raw.githubusercontent.com/github/explore/85cceaeeaf993ca35664dc37ea24f9237fbbfc14/topics/nginx/nginx.png
   - name: libvips
     web_url: https://github.com/topics/libvips
 
