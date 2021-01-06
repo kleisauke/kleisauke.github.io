@@ -1,5 +1,7 @@
 # kleisauke.github.io
 
+[![GitHub deployments](https://img.shields.io/github/deployments/kleisauke/kleisauke.github.io/github-pages?label=github-pages)](https://github.com/kleisauke/kleisauke.github.io/deployments)
+
 Personal website of Kleis Auke Wolthuizen.
 
 ## Getting Started
