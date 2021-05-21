@@ -1,49 +1,50 @@
 layout: sidebar
 style: light
 
+theme: jekyll-theme-primer
+
 plugins:
   - jekyll-octicons
   - jekyll-github-metadata
 
 repository: kleisauke/kleisauke.github.io
 
-# TODO: https://github.com/github/personal-website/issues/14
 repositories:
   - html_url: https://github.com/weserv/images
     name: weserv/images
     description: Source code of images.weserv.nl, to be used on your own server(s).
     language: C++
-    stargazers_count: 757
-    forks_count: 90
+    stargazers_count: 839
+    forks_count: 100
   - html_url: https://github.com/libvips/libvips
     name: libvips/libvips
     description: A fast image processing library with low memory needs.
     language: C
-    stargazers_count: 5k
-    forks_count: 404
+    stargazers_count: 5.4k
+    forks_count: 425
   - html_url: https://github.com/kleisauke/net-vips
     name: net-vips
     description: .NET binding for libvips
     language: C#
-    stargazers_count: 159
-    forks_count: 21
+    stargazers_count: 182
+    forks_count: 20
   - html_url: https://github.com/kleisauke/wasm-vips
     name: wasm-vips
     description: libvips for the browser and Node.js, compiled to WebAssembly with Emscripten.
     language: C++
-    stargazers_count: 39
-    forks_count: 2
+    stargazers_count: 75
+    forks_count: 5
   - html_url: https://github.com/lovell/sharp
     name: lovell/sharp
     description: High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library.
     language: JavaScript
-    stargazers_count: 18.6k
-    forks_count: 935
+    stargazers_count: 19.7k
+    forks_count: 978
   - html_url: https://github.com/libvips/ruby-vips
     name: libvips/ruby-vips
     description: Ruby extension for the libvips image processing library.
     language: Ruby
-    stargazers_count: 618
+    stargazers_count: 652
     forks_count: 50
 
 social_media:
@@ -69,6 +70,9 @@ topics:
     image_url: https://raw.githubusercontent.com/github/explore/85cceaeeaf993ca35664dc37ea24f9237fbbfc14/topics/nginx/nginx.png
   - name: libvips
     web_url: https://github.com/topics/libvips
+
+sass:
+  style: compressed
 
 compress_html:
   clippings: [html, head, body, link, meta, div, p, h1, h2, img, title, svg, a, span]
