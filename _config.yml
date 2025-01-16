@@ -48,7 +48,9 @@ repositories:
     forks_count: 60
 
 social_media:
+  bluesky: kleisauke.nl
   linkedin: kleisauke
+  mastodon: kleisauke
   stackoverflow: 10952119
   website: https://kleisauke.nl
 
