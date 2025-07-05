@@ -14,37 +14,37 @@ repositories:
     name: weserv/images
     description: Source code of wsrv.nl (formerly images.weserv.nl), to be used on your own server(s).
     language: C++
-    stargazers_count: 2.1k
-    forks_count: 208
+    stargazers_count: 2.3k
+    forks_count: 219
   - html_url: https://github.com/libvips/libvips
     name: libvips/libvips
     description: A fast image processing library with low memory needs.
     language: C
-    stargazers_count: 10k
-    forks_count: 688
+    stargazers_count: 10.4k
+    forks_count: 706
   - html_url: https://github.com/kleisauke/net-vips
     name: net-vips
     description: .NET binding for libvips.
     language: C#
-    stargazers_count: 412
-    forks_count: 33
+    stargazers_count: 444
+    forks_count: 34
   - html_url: https://github.com/kleisauke/wasm-vips
     name: wasm-vips
     description: libvips for the browser and Node.js, compiled to WebAssembly with Emscripten.
     language: C++
-    stargazers_count: 706
-    forks_count: 27
+    stargazers_count: 779
+    forks_count: 30
   - html_url: https://github.com/lovell/sharp
     name: lovell/sharp
     description: High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library.
     language: JavaScript
-    stargazers_count: 29.6k
+    stargazers_count: 30.7k
     forks_count: 1.3k
   - html_url: https://github.com/libvips/ruby-vips
     name: libvips/ruby-vips
     description: Ruby extension for the libvips image processing library.
     language: Ruby
-    stargazers_count: 840
+    stargazers_count: 857
     forks_count: 60
 
 social_media:
